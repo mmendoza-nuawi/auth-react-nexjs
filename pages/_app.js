@@ -1,5 +1,12 @@
-import "@/styles/globals.css";
+// pages/_app.js
+import { Auth0ProviderWithHistory } from "../auth0-provider";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return (
+    <Auth0ProviderWithHistory>
+      <Component {...pageProps} />
+    </Auth0ProviderWithHistory>
+  );
 }
+
+export default MyApp;
